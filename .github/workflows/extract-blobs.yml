@@ -6,35 +6,35 @@ on:
       FIRMWARE_DUMP_REPO:
         description: 'Your Firmware Dump URL'
         required: true
-        default: 'https://gitlab.com/kelexine/tecno-spark-8c-kg5j-rom-dump.git'
+        default: 'https://github.com/depesh1977/dump_lineage_rmx3231'
       FIRMWARE_DUMP_BRANCH:
         description: 'The Firmware Dump Branch'
         required: true
-        default: 'main'
+        default: 'dump-rmx3231-20241018'
       DEVICE_TREE_REPO:
         description: 'Your Android Device Tree URL'
         required: true
-        default: 'https://github.com/kelexine/android_device_tecno_kelly'
+        default: 'https://github.com/depesh1977/dump_lineage_rmx3231/tree/dump-rmx3231-20241018/lineage-device-tree'
       DEVICE_TREE_BRANCH:
         description: 'Your Android Device Tree Branch'
         required: true
-        default: 'lineage-18.1'
+        default: 'dump-rmx3231-20241018'
       DEVICE_CODENAME:
         description: 'Your Device Codename'
         required: true
-        default: 'kelly'
+        default: 'rmx3231'
       DEVICE_VENDORNAME:
         description: 'Your Device OEM Name'
         required: true
-        default: 'tecno'
+        default: 'realme'
       USER_NAME:
         description: 'Name in Github Account'
         required: true
-        default: 'kelexine'
+        default: 'depesh1977'
       USER_EMAIL:
         description: 'E-mail in Github Account'
         required: true
-        default: 'frankiekelechi@gmail.com'
+        default: 'axenov.gosha@yandex.ru'
 
 jobs:
   build:
@@ -42,7 +42,7 @@ jobs:
     if: github.event.repository.owner.id == github.event.sender.id
     runs-on: ubuntu-20.04
     env:
-      GITHUB_TOKEN: ${{ secrets.PAT }}
+      GITHUB_TOKEN: ${{ secrets.axe }}
       FDR: ${{ github.event.inputs.FIRMWARE_DUMP_REPO }}
       FDB: ${{ github.event.inputs.FIRMWARE_DUMP_BRANCH }}
       DTR: ${{ github.event.inputs.DEVICE_TREE_REPO }}
